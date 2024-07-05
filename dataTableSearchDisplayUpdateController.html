@@ -1,0 +1,32 @@
+<template>
+
+      <div class="slds-page-header">
+        
+            <lightning-card  variant="Narrow" icon-name="standard:account">
+                <h1 slot="title" class="wrap">Financial services Account Listing</h1>
+            </lightning-card>
+         
+    <lightning-input type="text" label="Enter Account Name:" onchange={searchAccounts}  >
+        </lightning-input>
+     
+     </div>   
+<div style="height: 500px;">
+<template if:true={data}>
+     <lightning-datatable key-field="Id"
+            data={data}
+            columns={columns}
+            sorted-by={sortBy}
+            sorted-direction={sortDirection}
+            onsort={handleSortAccountData}
+            onsave={handleSave}
+            draft-values={draftValues}
+            onrowaction={handleRowAction}
+            hide-checkbox-column="true"
+                >
+     </lightning-datatable>
+     
+</template>
+
+</div>
+       
+</template>
